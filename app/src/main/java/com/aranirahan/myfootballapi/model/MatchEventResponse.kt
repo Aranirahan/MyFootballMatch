@@ -3,8 +3,5 @@ import com.google.gson.annotations.SerializedName
 
 data class MatchEventResponse(
         @field:SerializedName("events")
-        val events: List<MatchEvent>? = null,
-
-        @field:SerializedName("teams")
-        val teamId: List<Team>? = null
+        val events: List<MatchEvent>? = null
 )

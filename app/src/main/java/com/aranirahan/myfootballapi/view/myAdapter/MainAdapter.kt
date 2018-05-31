@@ -38,10 +38,10 @@ class MatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     @SuppressLint("SetTextI18n")
     fun bindItem(events: MatchEvent, listener: (MatchEvent) -> Unit) {
-        homeName.text = events.homeName
-        awayName.text = events.awayName
-        if (events.homeScore != null) {
-            score.text = events.homeScore + " VS " + events.awayScore
+        homeName.text = events.strHomeTeam
+        awayName.text = events.strAwayTeam
+        if (events.intHomeScore != null) {
+            score.text = events.intHomeScore + " VS " + events.intAwayScore
         } else {
             score.text = "? VS ?"
         }

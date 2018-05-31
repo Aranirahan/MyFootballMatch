@@ -5,5 +5,5 @@ import com.aranirahan.myfootballapi.model.MatchEvent
 interface MainView {
     fun showLoading()
     fun hideLoading()
-    fun showMatchList(data: List<MatchEvent>?)
+    fun showMatchEventList(data: List<MatchEvent>?)
 }

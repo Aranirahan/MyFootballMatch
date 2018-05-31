@@ -13,8 +13,8 @@ class DetailActivity : AppCompatActivity() {
 
 //class DetailActivity : AppCompatActivity(), DetailView, MainView {
 //
-//    private lateinit var homeId: String
-//    private lateinit var awayId: String
+//    private lateinit var idHomeTeam: String
+//    private lateinit var idAwayTeam: String
 //    private lateinit var idEvent: String
 //
 //    private lateinit var txtHomeName: TextView
@@ -415,8 +415,8 @@ class DetailActivity : AppCompatActivity() {
 //
 //        val i = intent
 //
-//        homeId = i.getStringExtra(KEY.HOME_ID_KEY)
-//        awayId = i.getStringExtra(KEY.AWAY_ID_KEY)
+//        idHomeTeam = i.getStringExtra(KEY.HOME_ID_KEY)
+//        idAwayTeam = i.getStringExtra(KEY.AWAY_ID_KEY)
 //        idEvent = i.getStringExtra(KEY.EVENT_ID_KEY)
 //
 //        val request = APIRepository()
@@ -425,7 +425,7 @@ class DetailActivity : AppCompatActivity() {
 //        detailPresenter = DetailPresenter(this, request, gson)
 //        detailMatchPresenter = MatchDetailPresenter(this, request, gson)
 //
-//        detailPresenter.getBadgeList(homeId, awayId)
+//        detailPresenter.getBadgeList(idHomeTeam, idAwayTeam)
 //        detailMatchPresenter.getDetailMatch(idEvent)
 //    }
 //
@@ -446,34 +446,34 @@ class DetailActivity : AppCompatActivity() {
 //    }
 //
 //    override fun showTeamsList(data: List<Team>?, data2: List<Team>?) {
-//        team = Team(data?.get(0)?.teamBadge)
-//        team2 = Team(data2?.get(0)?.teamBadge)
-//        Picasso.with(this).load(data?.get(0)?.teamBadge).into(imgHome)
-//        Picasso.with(this).load(data2?.get(0)?.teamBadge).into(imgAway)
+//        team = Team(data?.get(0)?.strTeamBadge)
+//        team2 = Team(data2?.get(0)?.strTeamBadge)
+//        Picasso.with(this).load(data?.get(0)?.strTeamBadge).into(imgHome)
+//        Picasso.with(this).load(data2?.get(0)?.strTeamBadge).into(imgAway)
 //    }
 //
-//    override fun showMatchList(data: List<Match>?) {
-//        txtHomeName.text = data?.get(0)?.homeName
-//        txtHomeScore.text = data?.get(0)?.homeScore
-//        txtHomeFormation.text = data?.get(0)?.homeFormation
-//        txtHomeGoals.text = data?.get(0)?.homeGoalDetails
-//        txtHomeGoalkeeper.text = data?.get(0)?.homeGoalKeeper
-//        txtHomeShots.text = data?.get(0)?.homeShots
-//        txtHomeDefense.text = data?.get(0)?.homeDefense
-//        txtHomeForward.text = data?.get(0)?.homeForward
-//        txtHomeSubtitutes.text = data?.get(0)?.homeSubstitutes
-//        txtHomeMidfield.text = data?.get(0)?.homeMidfield
+//    override fun showMatchEventList(data: List<Match>?) {
+//        txtHomeName.text = data?.get(0)?.strHomeTeam
+//        txtHomeScore.text = data?.get(0)?.intHomeScore
+//        txtHomeFormation.text = data?.get(0)?.strHomeFormation
+//        txtHomeGoals.text = data?.get(0)?.strHomeGoalDetails
+//        txtHomeGoalkeeper.text = data?.get(0)?.strHomeLineupGoalkeeper
+//        txtHomeShots.text = data?.get(0)?.intHomeShots
+//        txtHomeDefense.text = data?.get(0)?.strHomeLineupDefense
+//        txtHomeForward.text = data?.get(0)?.strHomeLineupForward
+//        txtHomeSubtitutes.text = data?.get(0)?.strHomeLineupSubstitutes
+//        txtHomeMidfield.text = data?.get(0)?.strAwayLineupDefense
 //
-//        txtAwayName.text = data?.get(0)?.awayName
-//        txtAwayScore.text = data?.get(0)?.awayScore
-//        txtAwayFormation.text = data?.get(0)?.awayFormation
-//        txtAwayGoals.text = data?.get(0)?.awayGoalDetails
-//        txtAwayGoalkeeper.text = data?.get(0)?.awayGoalKeeper
-//        txtAwayShots.text = data?.get(0)?.awayShots
+//        txtAwayName.text = data?.get(0)?.strAwayTeam
+//        txtAwayScore.text = data?.get(0)?.intAwayScore
+//        txtAwayFormation.text = data?.get(0)?.strAwayFormation
+//        txtAwayGoals.text = data?.get(0)?.strAwayGoalDetails
+//        txtAwayGoalkeeper.text = data?.get(0)?.strAwayLineupGoalkeeper
+//        txtAwayShots.text = data?.get(0)?.intAwayShots
 //        txtAwayDefense.text = data?.get(0)?.awayDefense
-//        txtAwayForward.text = data?.get(0)?.awayForward
-//        txtAwaySubtitutes.text = data?.get(0)?.awaySubstitutes
-//        txtAwayMidfield.text = data?.get(0)?.awayMidfield
+//        txtAwayForward.text = data?.get(0)?.strAwayLineupForward
+//        txtAwaySubtitutes.text = data?.get(0)?.strAwayLineupSubstitutes
+//        txtAwayMidfield.text = data?.get(0)?.strAwayLineupMidfield
 //
 //        txtMatchDate.text = data?.get(0)?.dateEvent
 //    }

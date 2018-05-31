@@ -16,13 +16,13 @@ class MainPresenter(private val view: MainView,
         view.showLoading()
         doAsync {
             val data = gson.fromJson(apiRepository
-                    .doRequest(TheSportDBApi.getPastMatch(match)),
+                    .doRequest(TheSportDBApi.getPastMatchEvent(match)),
                     MatchEventResponse::class.java
             )
 
             uiThread {
                 view.hideLoading()
-                view.showMatchList(data.events)
+                view.showMatchEventList(data.events)
             }
         }
     }

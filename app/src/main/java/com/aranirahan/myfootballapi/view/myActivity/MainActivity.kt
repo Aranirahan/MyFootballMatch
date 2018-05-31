@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Gravity
 import android.widget.*
-import com.aranirahan.myfootballapi.view.myUtils.KEY
+import com.aranirahan.myfootballapi.view.myUtils.MyKEY
 import com.aranirahan.myfootballapi.R.color.colorAccent
 import com.aranirahan.myfootballapi.R.string.empty_data
 import com.aranirahan.myfootballapi.R.string.league_id
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), MainView {
         progressBar.invisible()
     }
 
-    override fun showMatchList(data: List<MatchEvent>?) {
+    override fun showMatchEventList(data: List<MatchEvent>?) {
         swipeRefresh.isRefreshing = false
         matchEvent?.clear()
         data?.let {
@@ -91,9 +91,9 @@ class MainActivity : AppCompatActivity(), MainView {
 
         adapter = MainAdapter(matchEvent) {
             startActivity<DetailActivity>(
-                    KEY.HOME_ID_KEY to it.homeId,
-                    KEY.AWAY_ID_KEY to it.awayId,
-                    KEY.EVENT_ID_KEY to it.idEvent)
+                    MyKEY.HOME_ID_KEY to it.idHomeTeam,
+                    MyKEY.AWAY_ID_KEY to it.idAwayTeam,
+                    MyKEY.EVENT_ID_KEY to it.idEvent)
         }
         listTeam.adapter = adapter
 
