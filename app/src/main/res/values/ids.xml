@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="team_badge" type="id">team_badge</item>
+    <item name="team_name" type="id">team_name</item>
+    <item name="cv_match" type="id">cv_match</item>
+    <item name="tv_match_date" type="id">tv_match_date</item>
+    <item name="tv_home_name" type="id">tv_home_name</item>
+    <item name="tv_score_match" type="id">tv_score_match</item>
+    <item name="tv_away_name" type="id">tv_away_name</item>
+</resources>
