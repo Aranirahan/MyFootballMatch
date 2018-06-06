@@ -13,8 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //TODO (4) Simpan BASE_URL dan API_KEY dari TheSportDB
-        //dengan mambahkan buildConfigField pada defaultConfig di dalam berkas build.gradle
+
         buildConfigField "String", "BASE_URL", "\"https://www.thesportsdb.com/\""
         buildConfigField "String", "TSDB_API_KEY", "\"1\""
     }

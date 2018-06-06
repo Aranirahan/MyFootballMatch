@@ -7,4 +7,22 @@
     <item name="tv_home_name" type="id">tv_home_name</item>
     <item name="tv_score_match" type="id">tv_score_match</item>
     <item name="tv_away_name" type="id">tv_away_name</item>
+    <item name="tv_home_score_match" type="id">tv_home_score_match</item>
+    <item name="tv_away_score_match" type="id">tv_away_score_match</item>
+    <item name="img_home" type="id">img_home</item>
+    <item name="tv_home_formation" type="id">tv_home_formation</item>
+    <item name="img_away" type="id">img_away</item>
+    <item name="tv_away_formation" type="id">tv_away_formation</item>
+    <item name="tv_home_goals" type="id">tv_home_goals</item>
+    <item name="tv_away_goals" type="id">tv_away_goals</item>
+    <item name="tv_home_shots" type="id">tv_home_shots</item>
+    <item name="tv_away_shots" type="id">tv_away_shots</item>
+    <item name="tv_home_defense" type="id">tv_home_defense</item>
+    <item name="tv_away_defense" type="id">tv_away_defense</item>
+    <item name="tv_home_midfield" type="id">tv_home_midfield</item>
+    <item name="tv_away_midfield" type="id">tv_away_midfield</item>
+    <item name="tv_home_forward" type="id">tv_home_forward</item>
+    <item name="tv_away_forward" type="id">tv_away_forward</item>
+    <item name="tv_home_substitutes" type="id">tv_home_substitutes</item>
+    <item name="tv_away_substitutes" type="id">tv_away_substitutes</item>
 </resources>

@@ -2,6 +2,15 @@
     <string name="app_name">MyFootballApi</string>
     <string name="empty_data">Empty Data</string>
     <string name="league_id">4332</string>
+    <string name="vs">vs</string>
+    <string name="goals">goals</string>
+    <string name="shots">shots</string>
+    <string name="lineup">lineup</string>
+    <string name="goalkeeper">goalkeeper</string>
+    <string name="defense">defense</string>
+    <string name="midfield">midfield</string>
+    <string name="forward">forward</string>
+    <string name="subtitute">subtitute</string>
 
 
     <array name="league">

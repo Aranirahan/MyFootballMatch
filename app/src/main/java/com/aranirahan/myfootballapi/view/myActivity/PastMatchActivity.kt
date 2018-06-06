@@ -11,7 +11,7 @@ import com.aranirahan.myfootballapi.view.myUtils.MyKEY
 import com.aranirahan.myfootballapi.R.color.colorAccent
 import com.aranirahan.myfootballapi.R.string.empty_data
 import com.aranirahan.myfootballapi.R.string.league_id
-import com.aranirahan.myfootballapi.model.ApiRepository
+import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.model.MatchEvent
 import com.aranirahan.myfootballapi.presenter.MainPresenter
 import com.aranirahan.myfootballapi.view.myAdapter.MainAdapter
@@ -24,7 +24,7 @@ import org.jetbrains.anko.recyclerview.v7.recyclerView
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
 
-class MainActivity : AppCompatActivity(), MainView {
+class PastMatchActivity : AppCompatActivity(), MainView {
 
     override fun showLoading() {
         progressBar.visible()
