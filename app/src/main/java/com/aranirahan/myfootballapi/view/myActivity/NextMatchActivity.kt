@@ -13,7 +13,7 @@ import com.aranirahan.myfootballapi.R.string.empty_data
 import com.aranirahan.myfootballapi.R.string.league_id
 import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.model.item.MatchEvent
-import com.aranirahan.myfootballapi.presenter.PastMatchPresenter
+import com.aranirahan.myfootballapi.presenter.NextMatchPresenter
 import com.aranirahan.myfootballapi.view.myAdapter.MainAdapter
 import com.aranirahan.myfootballapi.view.myUtils.invisible
 import com.aranirahan.myfootballapi.view.myInterface.MainView
@@ -24,7 +24,7 @@ import org.jetbrains.anko.recyclerview.v7.recyclerView
 import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
 
-class PastMatchActivity : AppCompatActivity(), MainView {
+class NextMatchActivity : AppCompatActivity(), MainView {
 
     override fun showLoading() {
         progressBar.visible()
@@ -48,7 +48,7 @@ class PastMatchActivity : AppCompatActivity(), MainView {
     private lateinit var swipeRefresh: SwipeRefreshLayout
 
     private var matchEvent: MutableList<MatchEvent> = mutableListOf()
-    private lateinit var presenter: PastMatchPresenter
+    private lateinit var presenter: NextMatchPresenter
     private lateinit var adapter: MainAdapter
 
 
@@ -61,7 +61,7 @@ class PastMatchActivity : AppCompatActivity(), MainView {
             leftPadding = dip(16)
             rightPadding = dip(16)
 
-            textView("FOOTBALL PAST MATCH") {
+            textView("FOOTBALL NEXT MATCH") {
                 gravity = Gravity.CENTER
             }.lparams {
                 width = matchParent
@@ -100,7 +100,7 @@ class PastMatchActivity : AppCompatActivity(), MainView {
 
         val request = ApiRepository()
         val gson = Gson()
-        presenter = PastMatchPresenter(this, request, gson)
+        presenter = NextMatchPresenter(this, request, gson)
         presenter.getMatchList(getString(league_id))
 
         swipeRefresh.onRefresh {

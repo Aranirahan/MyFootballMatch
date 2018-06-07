@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MyFootballApi</string>
     <string name="empty_data">Empty Data</string>
-    <string name="league_id">4332</string>
+    <string name="league_id">4328</string>
     <string name="vs">vs</string>
     <string name="goals">goals</string>
     <string name="shots">shots</string>

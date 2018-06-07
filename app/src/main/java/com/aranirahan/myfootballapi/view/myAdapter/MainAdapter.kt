@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.aranirahan.myfootballapi.R
 import com.aranirahan.myfootballapi.R.id.*
-import com.aranirahan.myfootballapi.model.MatchEvent
+import com.aranirahan.myfootballapi.model.item.MatchEvent
 import org.jetbrains.anko.*
 import org.jetbrains.anko.cardview.v7.cardView
 
@@ -46,7 +46,7 @@ class MatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             score.text = "? VS ?"
         }
         matchDate.text = events.dateEvent
-        cv.setOnClickListener {v: View  ->
+        cv.setOnClickListener { v: View ->
             listener(events)
         }
     }

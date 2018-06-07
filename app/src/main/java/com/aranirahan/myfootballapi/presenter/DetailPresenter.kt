@@ -1,6 +1,6 @@
 package com.aranirahan.myfootballapi.presenter
 
-import com.aranirahan.myfootballapi.model.MatchEventResponse
+import com.aranirahan.myfootballapi.model.item.MatchEventResponse
 import com.aranirahan.myfootballapi.view.myInterface.DetailView
 import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.model.api.TheSportDBApi

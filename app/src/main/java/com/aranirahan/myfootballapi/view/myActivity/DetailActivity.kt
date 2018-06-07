@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
 import com.aranirahan.myfootballapi.R
-import com.aranirahan.myfootballapi.model.MatchEvent
-import com.aranirahan.myfootballapi.model.Team
+import com.aranirahan.myfootballapi.model.item.MatchEvent
+import com.aranirahan.myfootballapi.model.item.Team
 import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.presenter.DetailPresenter
 import com.aranirahan.myfootballapi.presenter.MatchDetailPresenter
@@ -24,7 +24,6 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
 
     private lateinit var txtHomeName: TextView
     private lateinit var txtHomeScore: TextView
-    private lateinit var txtHomeFormation: TextView
     private lateinit var txtHomeGoals: TextView
     private lateinit var txtHomeShots: TextView
     private lateinit var txtHomeGoalkeeper: TextView
@@ -36,7 +35,6 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
 
     private lateinit var txtAwayName: TextView
     private lateinit var txtAwayScore: TextView
-    private lateinit var txtAwayFormation: TextView
     private lateinit var txtAwayGoals: TextView
     private lateinit var txtAwayShots: TextView
     private lateinit var txtAwayGoalkeeper: TextView
@@ -53,8 +51,8 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
     private lateinit var detailPresenter: DetailPresenter
     private lateinit var detailMatchPresenter: MatchDetailPresenter
 
-    private lateinit var team: Team
-    private lateinit var team2: Team
+    private lateinit var teamA: Team
+    private lateinit var teamB: Team
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,11 +83,11 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
         txtMatchDate = findViewById(R.id.match_date)
         progressBar = findViewById(R.id.progress_bar_detail)
 
-        val i = intent
+        val myIntent = intent
 
-        idHomeTeam = i.getStringExtra(MyKEY.HOME_ID_KEY)
-        idAwayTeam = i.getStringExtra(MyKEY.AWAY_ID_KEY)
-        idEvent = i.getStringExtra(MyKEY.EVENT_ID_KEY)
+        idHomeTeam = myIntent.getStringExtra(MyKEY.HOME_ID_KEY)
+        idAwayTeam = myIntent.getStringExtra(MyKEY.AWAY_ID_KEY)
+        idEvent = myIntent.getStringExtra(MyKEY.EVENT_ID_KEY)
 
         val request = ApiRepository()
         val gson = Gson()
@@ -118,8 +116,8 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
     }
 
     override fun showTeamsList(dataA: List<Team>?, dataB: List<Team>?) {
-        team = Team(dataA?.get(0)?.strTeamBadge)
-        team2 = Team(dataB?.get(0)?.strTeamBadge)
+        teamA = Team(dataA?.get(0)?.strTeamBadge)
+        teamB = Team(dataB?.get(0)?.strTeamBadge)
         Picasso.get().load(dataA?.get(0)?.strTeamBadge).into(imgHome)
         Picasso.get().load(dataB?.get(0)?.strTeamBadge).into(imgAway)
     }
@@ -127,7 +125,6 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
     override fun showMatchEventList(data: List<MatchEvent>?) {
         txtHomeName.text = data?.get(0)?.strHomeTeam ?: "-"
         txtHomeScore.text = data?.get(0)?.intHomeScore ?: "-"
-//        txtHomeFormation.text = data?.get(0)?.strHomeFormation ?: "-"
         txtHomeGoals.text = data?.get(0)?.strHomeGoalDetails ?: "-"
         txtHomeGoalkeeper.text = data?.get(0)?.strHomeLineupGoalkeeper ?: "-"
         txtHomeShots.text = data?.get(0)?.intHomeShots ?: "-"
@@ -138,7 +135,6 @@ class DetailActivity : AppCompatActivity(), DetailView, MainView {
 
         txtAwayName.text = data?.get(0)?.strAwayTeam ?: "-"
         txtAwayScore.text = data?.get(0)?.intAwayScore ?: "-"
-//        txtAwayFormation.text = data?.get(0)?.strAwayFormation ?: "-"
         txtAwayGoals.text = data?.get(0)?.strAwayGoalDetails ?: "-"
         txtAwayGoalkeeper.text = data?.get(0)?.strAwayLineupGoalkeeper ?: "-"
         txtAwayShots.text = data?.get(0)?.intAwayShots ?: "-"
