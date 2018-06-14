@@ -11,12 +11,12 @@ import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.presenter.DetailPresenter
 import com.aranirahan.myfootballapi.presenter.MatchDetailPresenter
 import com.aranirahan.myfootballapi.view.myInterface.DetailView
-import com.aranirahan.myfootballapi.view.myInterface.MainView
+import com.aranirahan.myfootballapi.view.myInterface.TeamsView
 import com.aranirahan.myfootballapi.view.myUtils.MyKEY
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 
-class DetailActivity : AppCompatActivity(), DetailView, MainView {
+class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
 
     private lateinit var idHomeTeam: String
     private lateinit var idAwayTeam: String

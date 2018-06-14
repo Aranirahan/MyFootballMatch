@@ -14,7 +14,7 @@ import com.aranirahan.myfootballapi.model.item.MatchEvent
 import org.jetbrains.anko.*
 import org.jetbrains.anko.cardview.v7.cardView
 
-class MainAdapter(private val matchEvents: List<MatchEvent>, private val listener: (MatchEvent) -> Unit)
+class TeamsAdapter(private val matchEvents: List<MatchEvent>, private val listener: (MatchEvent) -> Unit)
     : RecyclerView.Adapter<MatchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {

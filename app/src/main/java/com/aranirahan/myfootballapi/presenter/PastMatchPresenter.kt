@@ -3,12 +3,12 @@ package com.aranirahan.myfootballapi.presenter
 import com.aranirahan.myfootballapi.model.api.TheSportDBApi
 import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.model.item.MatchEventResponse
-import com.aranirahan.myfootballapi.view.myInterface.MainView
+import com.aranirahan.myfootballapi.view.myInterface.TeamsView
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class PastMatchPresenter(private val view: MainView,
+class PastMatchPresenter(private val view: TeamsView,
                          private val apiRepository: ApiRepository,
                          private val gson: Gson) {
 
