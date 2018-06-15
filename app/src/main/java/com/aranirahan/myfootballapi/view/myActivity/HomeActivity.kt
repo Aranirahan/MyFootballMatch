@@ -3,9 +3,10 @@ package com.aranirahan.myfootballapi.view.myActivity
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.aranirahan.myfootballapi.R
-import com.aranirahan.myfootballapi.R.string.favorites
-import com.aranirahan.myfootballapi.R.string.teams
+import com.aranirahan.myfootballapi.R.id.favorites
+import com.aranirahan.myfootballapi.R.id.teams
 import com.aranirahan.myfootballapi.view.myFragment.FavoriteTeamsFragment
 import com.aranirahan.myfootballapi.view.myFragment.TeamsFragment
 import kotlinx.android.synthetic.main.activity_home.*
@@ -20,9 +21,11 @@ class HomeActivity : AppCompatActivity() {
             when (item.itemId) {
                 teams -> {
                     loadTeamsFragment(savedInstanceState)
+                    Log.d("Teamku :" ,"true")
                 }
                 favorites -> {
                     loadFavoritesFragment(savedInstanceState)
+                    Log.d("myFavorite :" ,"true")
                 }
             }
             true
@@ -34,7 +37,8 @@ class HomeActivity : AppCompatActivity() {
         if (savedInstanceState == null){
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.main_container, TeamsFragment(), TeamsFragment::class.simpleName)
+                    .replace(R.id.main_container, TeamsFragment()
+                            ,TeamsFragment::class.simpleName)
                     .commit()
         }
     }
