@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyFootballApi</string>
+    <string name="app_name">Football Match Schedule</string>
     <string name="empty_data">Empty Data</string>
     <string name="league_id">4328</string>
     <string name="vs">vs</string>
