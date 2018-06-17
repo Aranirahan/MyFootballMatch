@@ -10,9 +10,9 @@ import org.jetbrains.anko.uiThread
 
 class DetailPresenter(private val view: DetailView,
                       private val apiRepository: ApiRepository,
-                      private val gson: Gson){
+                      private val gson: Gson) {
 
-    fun geDetailTeamList (teamA: String?, teamB: String?){
+    fun geDetailTeamList(teamA: String?, teamB: String?) {
         view.showLoading()
 
         doAsync {

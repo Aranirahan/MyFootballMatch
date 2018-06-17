@@ -2,10 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/teams"
+        android:id="@+id/pastMatch"
         android:enabled="true"
-        android:title="@string/teams"
+        android:title="@string/pastMatch"
         android:icon="@drawable/ic_teams"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/nextMatch"
+        android:enabled="true"
+        android:title="@string/nextMatch"
+        android:icon="@drawable/ic_last_page_black_24dp"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/favorites"
