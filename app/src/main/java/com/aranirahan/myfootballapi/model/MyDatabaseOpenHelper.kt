@@ -5,7 +5,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import org.jetbrains.anko.db.*
 
-class MyDatabaseOpenHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "FovoriteMatch.db", null, 1) {
+class MyDatabaseOpenHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx,
+        "FovoriteMatch.db",
+        null, 1) {
 
     companion object {
         private var instance: MyDatabaseOpenHelper? = null

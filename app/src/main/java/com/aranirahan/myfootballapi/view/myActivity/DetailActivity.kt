@@ -31,6 +31,9 @@ import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.toast
 
+import kotlinx.android.synthetic.main.activity_detail.view.*
+
+
 class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
 
     private lateinit var idHomeTeam: String

@@ -14,7 +14,8 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.cardview.v7.cardView
 
 
-class FavoriteMatchAdapter(private val favorite: List<Favorite>, private val listener: (Favorite) -> Unit)
+class FavoriteMatchAdapter(private val favorite: List<Favorite>
+                           , private val listener: (Favorite) -> Unit)
     : RecyclerView.Adapter<FavoriteMatchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteMatchViewHolder {

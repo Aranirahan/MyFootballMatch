@@ -5,6 +5,9 @@ import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.model.item.MatchEventResponse
 import com.aranirahan.myfootballapi.view.myInterface.TeamsView
 import com.google.gson.Gson
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.async
+import org.jetbrains.anko.coroutines.experimental.bg
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
@@ -14,16 +17,15 @@ class NextMatchPresenter(private val view: TeamsView,
 
     fun getMatchList(match: String?) {
         view.showLoading()
-        doAsync {
-            val data = gson.fromJson(apiRepository
-                    .doRequest(TheSportDBApi.getNextMatch(match)),
-                    MatchEventResponse::class.java
-            )
-
-            uiThread {
-                view.hideLoading()
-                view.showMatchEventList(data.events)
+        async(UI) {
+            val data = bg {
+                gson.fromJson(apiRepository
+                        .doRequest(TheSportDBApi.getNextMatch(match)),
+                        MatchEventResponse::class.java
+                )
             }
+            view.showMatchEventList(data.await().events)
+            view.hideLoading()
         }
     }
 }
