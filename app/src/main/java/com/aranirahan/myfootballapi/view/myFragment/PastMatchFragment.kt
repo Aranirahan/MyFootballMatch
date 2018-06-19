@@ -91,6 +91,7 @@ class PastMatchFragment : Fragment(), AnkoComponent<Context>, TeamsView {
                     lparams(width = matchParent, height = wrapContent)
 
                     listTeam = recyclerView {
+                        id = R.id.rv_list_team
                         lparams(width = matchParent, height = wrapContent)
                         layoutManager = LinearLayoutManager(ctx)
                     }

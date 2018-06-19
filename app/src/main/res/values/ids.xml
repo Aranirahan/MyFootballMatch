@@ -25,4 +25,6 @@
     <item name="tv_away_forward" type="id">tv_away_forward</item>
     <item name="tv_home_substitutes" type="id">tv_home_substitutes</item>
     <item name="tv_away_substitutes" type="id">tv_away_substitutes</item>
+    <item name="rv_list_team" type="id">rv_list_team</item>
+    <item name="rv_list_team_favorite" type="id">rv_list_team_favorite</item>
 </resources>

@@ -15,7 +15,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 
 import com.aranirahan.myfootballapi.R
-import com.aranirahan.myfootballapi.R.id.favorites
 import com.aranirahan.myfootballapi.model.Favorite
 import com.aranirahan.myfootballapi.model.database
 import com.aranirahan.myfootballapi.view.myActivity.DetailActivity
@@ -94,6 +93,7 @@ class FavoriteMatchFragment : Fragment(), AnkoComponent<Context> {
                     lparams(width = matchParent, height = wrapContent)
 
                     listTeam = recyclerView {
+                        id = R.id.rv_list_team_favorite
                         lparams(width = matchParent, height = wrapContent)
                         layoutManager = LinearLayoutManager(ctx)
                     }
