@@ -1,7 +1,6 @@
 package com.aranirahan.myfootballapi.view.myActivity
 
 
-import android.support.design.internal.BottomNavigationItemView
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.Espresso.pressBack
 import android.support.test.espresso.action.ViewActions.click
@@ -16,9 +15,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-/**
- * Created by root on 3/1/18.
- */
 @RunWith(AndroidJUnit4::class)
 class HomeActivityTest {
     @Rule
@@ -26,15 +22,51 @@ class HomeActivityTest {
     var activityRule = ActivityTestRule(HomeActivity::class.java)
 
     @Test
-    fun testRecyclerViewBehaviour() {
+    fun testAppBehaviour() {
         onView(withId(pastMatch)).check(matches(isDisplayed()))
-        onView(withId(nextMatch)).check(matches(isDisplayed()))
-        onView(withId(favorites)).check(matches(isDisplayed()))
         Thread.sleep(4000)
-        onView(withId(rv_list_team))
-                .check(matches(isDisplayed()))
-        onView(withId(rv_list_team)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(12))
+
+        onView(withId(rv_list_team)).check(matches(isDisplayed()))
         onView(withId(rv_list_team)).perform(
-                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(10, click()))
+                RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(12))
+        onView(withId(rv_list_team)).perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                        11, click()))
+        Thread.sleep(3000)
+        onView(withId(add_to_favorite)).perform(click())
+        onView(withText("Added to favorite"))
+                .check(matches(isDisplayed()))
+        pressBack()
+
+        onView(withId(rv_list_team)).check(matches(isDisplayed()))
+        onView(withId(rv_list_team)).perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                        10, click()))
+        Thread.sleep(3000)
+        onView(withId(add_to_favorite)).perform(click())
+        onView(withText("Added to favorite"))
+                .check(matches(isDisplayed()))
+        pressBack()
+
+        onView(withId(rv_list_team)).check(matches(isDisplayed()))
+        onView(withId(rv_list_team)).perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                        9, click()))
+        Thread.sleep(3000)
+        onView(withId(add_to_favorite)).perform(click())
+        onView(withText("Added to favorite"))
+                .check(matches(isDisplayed()))
+        pressBack()
+
+        onView(withId(favorites)).check(matches(isDisplayed()))
+        onView(withId(favorites)).perform(click())
+        onView(withId(rv_list_team_favorite))
+                .check(matches(isDisplayed()))
+        Thread.sleep(3000)
+        onView(withId(rv_list_team_favorite)).perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
+                        2, click()))
+        pressBack()
+
     }
 }

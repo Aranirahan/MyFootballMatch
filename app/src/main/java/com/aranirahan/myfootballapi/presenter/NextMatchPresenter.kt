@@ -8,8 +8,6 @@ import com.google.gson.Gson
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class NextMatchPresenter(private val view: TeamsView,
                          private val apiRepository: ApiRepository,

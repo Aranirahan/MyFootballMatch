@@ -56,10 +56,10 @@ class NextMatchFragment : Fragment(), AnkoComponent<Context>, TeamsView {
         val request = ApiRepository()
         val gson = Gson()
         presenter = NextMatchPresenter(this, request, gson)
-        presenter.getMatchList(getString(R.string.league_id))
+        presenter.getMatchList(getString(R.string.match_id))
 
         swipeRefresh.onRefresh {
-            presenter.getMatchList(getString(R.string.league_id))
+            presenter.getMatchList(getString(R.string.match_id))
         }
     }
 
@@ -116,7 +116,7 @@ class NextMatchFragment : Fragment(), AnkoComponent<Context>, TeamsView {
 
     override fun showMatchEventList(data: List<MatchEvent>?) {
         swipeRefresh.isRefreshing = false
-        matchEvent?.clear()
+        matchEvent.clear()
         data?.let {
             matchEvent.addAll(data)
             adapter.notifyDataSetChanged()

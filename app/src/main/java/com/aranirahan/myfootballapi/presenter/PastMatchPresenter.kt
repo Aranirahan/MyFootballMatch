@@ -5,19 +5,18 @@ import com.aranirahan.myfootballapi.model.api.ApiRepository
 import com.aranirahan.myfootballapi.model.item.MatchEventResponse
 import com.aranirahan.myfootballapi.view.myInterface.TeamsView
 import com.google.gson.Gson
-import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class PastMatchPresenter(private val view: TeamsView,
                          private val apiRepository: ApiRepository,
-                         private val gson: Gson) {
+                         private val gson: Gson,
+                         private val context: CoroutineContextProvider = CoroutineContextProvider()) {
 
     fun getMatchList(match: String?) {
         view.showLoading()
-        async(UI) {
+
+        async(context.main) {
             val data = bg {
                 gson.fromJson(apiRepository
                         .doRequest(TheSportDBApi.getPastMatchEvent(match)),
@@ -29,3 +28,4 @@ class PastMatchPresenter(private val view: TeamsView,
         }
     }
 }
+

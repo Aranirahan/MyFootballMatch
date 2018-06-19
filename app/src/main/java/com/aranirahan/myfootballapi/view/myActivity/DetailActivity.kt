@@ -2,6 +2,7 @@ package com.aranirahan.myfootballapi.view.myActivity
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -29,9 +30,8 @@ import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.activity_detail.*
 
-import kotlinx.android.synthetic.main.activity_detail.view.*
 
 
 class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
@@ -39,28 +39,6 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
     private lateinit var idHomeTeam: String
     private lateinit var idAwayTeam: String
     private lateinit var idEvent: String
-
-    private lateinit var txtHomeName: TextView
-    private lateinit var txtHomeScore: TextView
-    private lateinit var txtHomeGoals: TextView
-    private lateinit var txtHomeShots: TextView
-    private lateinit var txtHomeGoalkeeper: TextView
-    private lateinit var txtHomeDefense: TextView
-    private lateinit var txtHomeForward: TextView
-    private lateinit var txtHomeSubtitutes: TextView
-    private lateinit var txtHomeMidfield: TextView
-    private lateinit var imgHome: ImageView
-
-    private lateinit var txtAwayName: TextView
-    private lateinit var txtAwayScore: TextView
-    private lateinit var txtAwayGoals: TextView
-    private lateinit var txtAwayShots: TextView
-    private lateinit var txtAwayGoalkeeper: TextView
-    private lateinit var txtAwayDefense: TextView
-    private lateinit var txtAwayForward: TextView
-    private lateinit var txtAwaySubtitutes: TextView
-    private lateinit var txtAwayMidfield: TextView
-    private lateinit var imgAway: ImageView
 
     private lateinit var txtMatchDate: TextView
     private lateinit var progressBar: ProgressBar
@@ -78,28 +56,6 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-
-        txtHomeName = findViewById(R.id.home_name)
-        txtHomeScore = findViewById(R.id.home_score_match)
-        txtHomeGoals = findViewById(R.id.home_goals)
-        txtHomeShots = findViewById(R.id.home_shots)
-        txtHomeGoalkeeper = findViewById(R.id.home_goalkeeper)
-        txtHomeDefense = findViewById(R.id.home_defense)
-        txtHomeForward = findViewById(R.id.away_forward)
-        txtHomeSubtitutes = findViewById(R.id.home_substitutes)
-        txtHomeMidfield = findViewById(R.id.home_midfield)
-        imgHome = findViewById(R.id.img_home)
-
-        txtAwayName = findViewById(R.id.away_name)
-        txtAwayScore = findViewById(R.id.away_score_match)
-        txtAwayGoals = findViewById(R.id.away_goals)
-        txtAwayShots = findViewById(R.id.home_shots)
-        txtAwayGoalkeeper = findViewById(R.id.away_goalkeeper)
-        txtAwaySubtitutes = findViewById(R.id.away_substitutes)
-        txtAwayDefense = findViewById(R.id.away_defense)
-        txtAwayMidfield = findViewById(R.id.away_midfield)
-        txtAwayForward = findViewById(R.id.away_forward)
-        imgAway = findViewById(R.id.img_away)
 
         txtMatchDate = findViewById(R.id.match_date)
         progressBar = findViewById(R.id.progress_bar_detail)
@@ -119,6 +75,7 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
 
         detailPresenter.geDetailTeamList(idHomeTeam, idAwayTeam)
         detailMatchPresenter.getDetailMatch(idEvent)
+
     }
 
     private fun View.visible() {
@@ -137,11 +94,11 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
         progressBar.invisible()
     }
 
-    override fun showTeamsList(dataA: List<Team>?, dataB: List<Team>?) {
-        teamA = Team(dataA?.get(0)?.strTeamBadge)
-        teamB = Team(dataB?.get(0)?.strTeamBadge)
-        Picasso.get().load(dataA?.get(0)?.strTeamBadge).into(imgHome)
-        Picasso.get().load(dataB?.get(0)?.strTeamBadge).into(imgAway)
+    override fun showTeamsList(data: List<Team>?, data2: List<Team>?) {
+        teamA = Team(data?.get(0)?.strTeamBadge)
+        teamB = Team(data2?.get(0)?.strTeamBadge)
+        Picasso.get().load(data?.get(0)?.strTeamBadge).into(img_home)
+        Picasso.get().load(data2?.get(0)?.strTeamBadge).into(img_away)
     }
 
     override fun showMatchEventList(data: List<MatchEvent>?) {
@@ -171,27 +128,27 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
                 data?.get(0)?.idHomeTeam,
                 data?.get(0)?.idAwayTeam)
 
-        txtHomeName.text = data?.get(0)?.strHomeTeam
-        txtHomeScore.text = data?.get(0)?.intHomeScore
-        txtHomeGoals.text = data?.get(0)?.strHomeGoalDetails
-        txtHomeGoalkeeper.text = data?.get(0)?.strHomeLineupGoalkeeper
-        txtHomeShots.text = data?.get(0)?.intHomeShots
-        txtHomeDefense.text = data?.get(0)?.strHomeLineupDefense
-        txtHomeForward.text = data?.get(0)?.strHomeLineupForward
-        txtHomeSubtitutes.text = data?.get(0)?.strHomeLineupSubstitutes
-        txtHomeMidfield.text = data?.get(0)?.strAwayLineupDefense
+        home_name.text = data?.get(0)?.strHomeTeam
+        home_score_match.text = data?.get(0)?.intHomeScore
+        home_goals.text = data?.get(0)?.strHomeGoalDetails
+        home_goalkeeper.text = data?.get(0)?.strHomeLineupGoalkeeper
+        home_shots.text = data?.get(0)?.intHomeShots
+        home_defense.text = data?.get(0)?.strHomeLineupDefense
+        home_forward.text = data?.get(0)?.strHomeLineupForward
+        home_substitutes.text = data?.get(0)?.strHomeLineupSubstitutes
+        home_midfield.text = data?.get(0)?.strAwayLineupDefense
 
-        txtAwayName.text = data?.get(0)?.strAwayTeam
-        txtAwayScore.text = data?.get(0)?.intAwayScore
-        txtAwayGoals.text = data?.get(0)?.strAwayGoalDetails
-        txtAwayGoalkeeper.text = data?.get(0)?.strAwayLineupGoalkeeper
-        txtAwayShots.text = data?.get(0)?.intAwayShots
-        txtAwayDefense.text = data?.get(0)?.awayDefense
-        txtAwayForward.text = data?.get(0)?.strAwayLineupForward
-        txtAwaySubtitutes.text = data?.get(0)?.strAwayLineupSubstitutes
-        txtAwayMidfield.text = data?.get(0)?.strAwayLineupMidfield
+        away_name.text = data?.get(0)?.strAwayTeam
+        away_score_match.text = data?.get(0)?.intAwayScore
+        away_goals.text = data?.get(0)?.strAwayGoalDetails
+        away_goalkeeper.text = data?.get(0)?.strAwayLineupGoalkeeper
+        away_shot.text = data?.get(0)?.intAwayShots
+        away_defense.text = data?.get(0)?.awayDefense
+        away_forward.text = data?.get(0)?.strAwayLineupForward
+        away_substitutes.text = data?.get(0)?.strAwayLineupSubstitutes
+        away_midfield.text = data?.get(0)?.strAwayLineupMidfield
 
-        txtMatchDate.text = data?.get(0)?.dateEvent
+        match_date.text = data?.get(0)?.dateEvent
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -248,9 +205,9 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
                         Favorite.ID_HOME_TEAM to matchEvent.idHomeTeam,
                         Favorite.ID_AWAY_TEAM to matchEvent.idAwayTeam)
             }
-            toast("Added to favorite")
+            Snackbar.make(findViewById(R.id.ll_detail), "Added to favorite", Snackbar.LENGTH_SHORT).show()
         } catch (e: SQLiteConstraintException) {
-            toast("Can't add to favorite")
+            Snackbar.make(findViewById(R.id.ll_detail), "Can't add to favorite", Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -261,9 +218,9 @@ class DetailActivity : AppCompatActivity(), DetailView, TeamsView {
                         "(ID_EVENT = {idEvent})",
                         "idEvent" to idEvent)
             }
-            toast("Removed from favorite")
+            Snackbar.make(findViewById(R.id.ll_detail), "Removed from favorite", Snackbar.LENGTH_SHORT).show()
         } catch (e: SQLiteConstraintException) {
-            toast("Can't remove from favorite")
+            Snackbar.make(findViewById(R.id.ll_detail), "Can't remove from favorite", Snackbar.LENGTH_SHORT).show()
         }
     }
 

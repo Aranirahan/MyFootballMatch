@@ -1,5 +1,6 @@
 package com.aranirahan.myfootballapi.view.myAdapter
 
+import android.annotation.SuppressLint
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.Gravity
@@ -35,8 +36,9 @@ class FavoriteMatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val awayName: TextView = view.find(tv_away_name)
     private val score: TextView = view.find(tv_score_match)
     private val matchDate: TextView = view.find(tv_match_date)
-    val cv: CardView = view.find(cv_match)
+    private val cv: CardView = view.find(cv_match)
 
+    @SuppressLint("SetTextI18n")
     fun bindItem(favorite: Favorite, listener: (Favorite) -> Unit) {
         homeName.text = favorite.strHomeTeam
         awayName.text = favorite.strAwayTeam
@@ -46,7 +48,7 @@ class FavoriteMatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             score.text = "? VS ?"
         }
         matchDate.text = favorite.dateEvent
-        cv.setOnClickListener { v: View ->
+        cv.setOnClickListener { _: View ->
             listener(favorite)
         }
     }

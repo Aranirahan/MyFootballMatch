@@ -34,7 +34,7 @@ class MatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val awayName: TextView = view.find(tv_away_name)
     private val score: TextView = view.find(tv_score_match)
     private val matchDate: TextView = view.find(tv_match_date)
-    val cv: CardView = view.find(cv_match)
+    private val cv: CardView = view.find(cv_match)
 
     @SuppressLint("SetTextI18n")
     fun bindItem(events: MatchEvent, listener: (MatchEvent) -> Unit) {
@@ -46,7 +46,7 @@ class MatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             score.text = "? VS ?"
         }
         matchDate.text = events.dateEvent
-        cv.setOnClickListener { v: View ->
+        cv.setOnClickListener { _: View ->
             listener(events)
         }
     }
