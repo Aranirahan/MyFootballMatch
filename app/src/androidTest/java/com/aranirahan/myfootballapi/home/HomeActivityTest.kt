@@ -24,7 +24,7 @@ class HomeActivityTest {
     @Test
     fun testAppBehaviour() {
         onView(withId(pastMatch)).check(matches(isDisplayed()))
-        Thread.sleep(4000)
+        Thread.sleep(5000)
 
         onView(withId(rv_list_team)).check(matches(isDisplayed()))
         onView(withId(rv_list_team)).perform(

@@ -1,7 +1,6 @@
 package com.aranirahan.myfootballapi.favorite.favoriteTeam
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -66,9 +65,6 @@ class FavoriteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bindItem(favoriteTeam: FavoriteTeam, listener: (FavoriteTeam) -> Unit) {
         Picasso.get().load(favoriteTeam.teamBadge).into(teamBadge)
         teamName.text = favoriteTeam.teamName
-        Log.d("myFavoriteTeamAdapater", "teamId : " + favoriteTeam.teamId
-                + ", teamName : " + favoriteTeam.teamName
-                + ", teamBadge :" + favoriteTeam.teamBadge)
         itemView.onClick { listener(favoriteTeam) }
     }
 }

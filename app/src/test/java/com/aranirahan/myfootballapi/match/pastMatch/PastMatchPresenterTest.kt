@@ -6,6 +6,7 @@ import com.aranirahan.myfootballapi.model.MatchEvent
 import com.aranirahan.myfootballapi.model.MatchEventResponse
 import com.aranirahan.myfootballapi.util.TestContextProvider
 import com.aranirahan.myfootballapi.match.MatchView
+import com.aranirahan.myfootballapi.match.PastMatchPresenter
 import com.google.gson.Gson
 import org.junit.Test
 
@@ -41,11 +42,12 @@ class PastMatchPresenterTest {
         val matchEvent: MutableList<MatchEvent> = mutableListOf()
         val response = MatchEventResponse(matchEvent)
         val match = "4328"
+        val eror = "eror"
 
         `when`(gson.fromJson(apiRepository
                 .doRequest(TheSportDBApi.getPastMatchEvent(match)), MatchEventResponse::class.java))
                 .thenReturn(response)
-        presenter.getMatchList(match)
+        presenter.getMatchList(match,eror)
 
         verify(view).showLoading()
         verify(view).showMatchEventList(matchEvent)

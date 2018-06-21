@@ -1,7 +1,6 @@
 package com.aranirahan.myfootballapi.detail.detailTeam.player
 
 
-import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
@@ -40,13 +39,13 @@ class TeamUI : AnkoComponent<ViewGroup> {
 
                 imageView {
                     id = team_badge_player
-                }.lparams{
+                }.lparams {
                     height = dip(50)
                     width = dip(50)
                 }
 
                 linearLayout {
-                    lparams(width = matchParent, height = wrapContent){
+                    lparams(width = matchParent, height = wrapContent) {
                         leftMargin = dip(8)
                     }
                     orientation = LinearLayout.VERTICAL
@@ -71,7 +70,7 @@ class TeamUI : AnkoComponent<ViewGroup> {
 }
 
 
-class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view){
+class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val teamBadge: ImageView = view.find(team_badge_player)
     private val teamName: TextView = view.find(team_name_player)

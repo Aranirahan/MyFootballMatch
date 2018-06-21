@@ -9,13 +9,13 @@ import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
 
 class PlayerDetailPresenter(private val view: PlayerDetailView,
-                          private val apiRepository: ApiRepository,
-                          private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()) {
+                            private val apiRepository: ApiRepository,
+                            private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()) {
 
     fun getPlayerList(idTeam: String?) {
         view.showLoading()
 
-        async(context.main){
+        async(context.main) {
             val data = bg {
                 gson.fromJson(apiRepository
                         .doRequest(TheSportDBApi.getPlayerDetail(idTeam)),

@@ -30,7 +30,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        adapter = FavoriteTeamsAdapter(favorites){
+        adapter = FavoriteTeamsAdapter(favorites) {
             ctx.startActivity<TeamDetailActivity>("id" to "${it.teamId}")
         }
 
@@ -42,7 +42,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
         }
     }
 
-    private fun showFavorite(){
+    private fun showFavorite() {
         context?.databaseTeam?.use {
             swipeRefresh.isRefreshing = false
             val result = select(FavoriteTeam.TABLE_FAVORITE_TEAM)
@@ -56,9 +56,9 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
         return createView(AnkoContext.create(ctx))
     }
 
-    override fun createView(ui: AnkoContext<Context>): View = with(ui){
+    override fun createView(ui: AnkoContext<Context>): View = with(ui) {
         linearLayout {
-            lparams (width = matchParent, height = wrapContent)
+            lparams(width = matchParent, height = wrapContent)
             topPadding = dip(16)
             leftPadding = dip(16)
             rightPadding = dip(16)
@@ -70,7 +70,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
                         android.R.color.holo_red_light)
 
                 listEvent = recyclerView {
-                    lparams (width = matchParent, height = wrapContent)
+                    lparams(width = matchParent, height = wrapContent)
                     layoutManager = LinearLayoutManager(ctx)
                 }
             }

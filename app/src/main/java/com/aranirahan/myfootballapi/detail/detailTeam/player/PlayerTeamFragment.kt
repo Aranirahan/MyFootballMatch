@@ -6,22 +6,15 @@ import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.aranirahan.myfootballapi.R.array.league
 import com.aranirahan.myfootballapi.R.color.colorAccent
 import com.aranirahan.myfootballapi.api.ApiRepository
-import com.aranirahan.myfootballapi.detail.detailTeam.detailActivity.TeamDetailActivity
 import com.aranirahan.myfootballapi.detail.detailTeam.detailActivity.TeamPagerAdapter
 import com.aranirahan.myfootballapi.detail.detailTeam.player.playerDetail.PlayerDetailActivity
 import com.aranirahan.myfootballapi.model.PlayerTeam
-import com.aranirahan.myfootballapi.model.Team
-import com.aranirahan.myfootballapi.team.TeamsAdapter
-import com.aranirahan.myfootballapi.team.TeamsPresenter
-import com.aranirahan.myfootballapi.team.TeamsView
 import com.aranirahan.myfootballapi.util.invisible
 import com.aranirahan.myfootballapi.util.visible
 import com.google.gson.Gson
@@ -39,7 +32,6 @@ class PlayerTeamFragment : Fragment(), AnkoComponent<Context>, PlayerTeamView {
     private lateinit var listEvent: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var swipeRefresh: SwipeRefreshLayout
-    private lateinit var leagueName: String
     private lateinit var idTeam: String
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -52,7 +44,6 @@ class PlayerTeamFragment : Fragment(), AnkoComponent<Context>, PlayerTeamView {
 
         val bindData = arguments
         idTeam = bindData?.getString(TeamPagerAdapter.KEY_TEAM_2) ?: "idTeam"
-        Log.d("myDTF", idTeam)
 
         val request = ApiRepository()
         val gson = Gson()
@@ -66,7 +57,8 @@ class PlayerTeamFragment : Fragment(), AnkoComponent<Context>, PlayerTeamView {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         return createView(AnkoContext.create(ctx))
     }
 

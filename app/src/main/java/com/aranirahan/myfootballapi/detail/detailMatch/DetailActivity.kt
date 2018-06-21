@@ -204,9 +204,11 @@ class DetailActivity : AppCompatActivity(), DetailView, MatchView {
                         Favorite.ID_HOME_TEAM to matchEvent.idHomeTeam,
                         Favorite.ID_AWAY_TEAM to matchEvent.idAwayTeam)
             }
-            Snackbar.make(findViewById(R.id.ll_detail), "Added to favorite", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(R.id.ll_detail),
+                    "Added to favorite", Snackbar.LENGTH_SHORT).show()
         } catch (e: SQLiteConstraintException) {
-            Snackbar.make(findViewById(R.id.ll_detail), "Can't add to favorite", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(R.id.ll_detail),
+                    "Can't add to favorite", Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -217,9 +219,11 @@ class DetailActivity : AppCompatActivity(), DetailView, MatchView {
                         "(ID_EVENT = {idEvent})",
                         "idEvent" to idEvent)
             }
-            Snackbar.make(findViewById(R.id.ll_detail), "Removed from favorite", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(R.id.ll_detail),
+                    "Removed from favorite", Snackbar.LENGTH_SHORT).show()
         } catch (e: SQLiteConstraintException) {
-            Snackbar.make(findViewById(R.id.ll_detail), "Can't remove from favorite", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(R.id.ll_detail),
+                    "Can't remove from favorite", Snackbar.LENGTH_SHORT).show()
         }
     }
 

@@ -7,7 +7,7 @@ import com.aranirahan.myfootballapi.R
 import com.aranirahan.myfootballapi.R.id.*
 import com.aranirahan.myfootballapi.favorite.favoriteMatch.FavoriteMatchFragment
 import com.aranirahan.myfootballapi.favorite.favoriteTeam.FavoriteTeamsFragment
-import com.aranirahan.myfootballapi.match.pastMatch.PastMatchFragment
+import com.aranirahan.myfootballapi.match.PastMatchFragment
 import com.aranirahan.myfootballapi.team.TeamsFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        bottom_navigation.setOnNavigationItemSelectedListener{ item ->
+        bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 pastMatch -> {
                     loadPastMatchFragment(savedInstanceState)
@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.main_container, PastMatchFragment()
-                            ,PastMatchFragment::class.simpleName)
+                            , PastMatchFragment::class.simpleName)
                     .commit()
         }
     }
@@ -62,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.main_container, FavoriteMatchFragment()
-                            ,FavoriteMatchFragment::class.simpleName)
+                            , FavoriteMatchFragment::class.simpleName)
                     .commit()
         }
     }
@@ -72,7 +72,7 @@ class HomeActivity : AppCompatActivity() {
             supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.main_container, FavoriteTeamsFragment()
-                            ,FavoriteTeamsFragment::class.simpleName)
+                            , FavoriteTeamsFragment::class.simpleName)
                     .commit()
         }
     }
