@@ -4,20 +4,27 @@
     <item
         android:id="@+id/pastMatch"
         android:enabled="true"
-        android:title="@string/pastMatch"
-        android:icon="@drawable/ic_teams"
+        android:title="@string/match_"
+        android:icon="@drawable/match"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/nextMatch"
         android:enabled="true"
-        android:title="@string/nextMatch"
-        android:icon="@drawable/ic_last_page_black_24dp"
+        android:title="@string/team_"
+        android:icon="@drawable/ball"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/favorites"
         android:enabled="true"
-        android:icon="@drawable/ic_favorites"
-        android:title="@string/favorites"
+        android:icon="@drawable/favorite_match"
+        android:title="@string/my_match"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/favorites_team"
+        android:enabled="true"
+        android:icon="@drawable/favorite_team"
+        android:title="@string/my_team"
         app:showAsAction="ifRoom"/>
 
 </menu>

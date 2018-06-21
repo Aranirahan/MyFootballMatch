@@ -11,17 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.myActivity.HomeActivity">
+        <activity android:name=".home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.myActivity.DetailActivity" />
-        <activity android:name=".view.myActivity.PastMatchActivity" />
-        <activity android:name=".view.myActivity.NextMatchActivity" />
-        <activity android:name=".view.myActivity.MainActivity"></activity>
+        <activity android:name=".detail.detailMatch.DetailActivity" />
+        <activity android:name=".detail.detailTeam.detailActivity.TeamDetailActivity" />
+        <activity android:name=".detail.detailTeam.TeamDetailActivity2" />
+        <!-- <activity android:name=".view.myActivity.PastMatchActivity" /> -->
+        <!-- <activity android:name=".view.myActivity.NextMatchActivity" /> -->
+        <!-- <activity android:name=".view.myActivity.MainActivity" /> -->
+        <activity android:name=".detail.detailTeam.player.playerDetail.PlayerDetailActivity"></activity>
     </application>
 
 </manifest>
