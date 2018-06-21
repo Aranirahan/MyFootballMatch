@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.aranirahan.myfootballapi.R.color.colorAccent
 import com.aranirahan.myfootballapi.db.FavoriteTeam
-import com.aranirahan.myfootballapi.db.databaseTeam
+import com.aranirahan.myfootballapi.db.database
 import com.aranirahan.myfootballapi.detail.detailTeam.detailActivity.TeamDetailActivity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.db.classParser
@@ -43,7 +43,7 @@ class FavoriteTeamsFragment : Fragment(), AnkoComponent<Context> {
     }
 
     private fun showFavorite() {
-        context?.databaseTeam?.use {
+        context?.database?.use {
             swipeRefresh.isRefreshing = false
             val result = select(FavoriteTeam.TABLE_FAVORITE_TEAM)
             val favorite = result.parseList(classParser<FavoriteTeam>())

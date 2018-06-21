@@ -7,7 +7,7 @@ data class FavoriteTeam(
         val teamBadge: String? = null) {
 
     companion object {
-        const val TABLE_FAVORITE_TEAM: String = "TABLE_FAVORITE"
+        const val TABLE_FAVORITE_TEAM: String = "TABLE_FAVORITE_TEAM"
         const val ID_FAVORITE_TEAM: String = "ID_FAVORITE_TEAM"
         const val TEAM_ID: String = "TEAM_ID"
         const val TEAM_NAME: String = "TEAM_NAME"
