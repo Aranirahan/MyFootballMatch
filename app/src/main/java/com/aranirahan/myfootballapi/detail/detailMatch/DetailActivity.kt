@@ -28,6 +28,7 @@ import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
+import org.jetbrains.anko.toast
 
 
 class DetailActivity : AppCompatActivity(), DetailView, MatchView {
@@ -164,10 +165,14 @@ class DetailActivity : AppCompatActivity(), DetailView, MatchView {
                 true
             }
             add_to_favorite -> {
-                if (isFavorite) removeFromFavorite() else addToFavorite()
+                try {
+                    if (isFavorite) removeFromFavorite() else addToFavorite()
 
-                isFavorite = !isFavorite
-                setFavorite()
+                    isFavorite = !isFavorite
+                    setFavorite()
+                } catch (e: Exception) {
+                    toast("Still loading, try again")
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)

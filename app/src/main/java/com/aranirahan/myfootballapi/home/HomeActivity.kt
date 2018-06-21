@@ -7,7 +7,7 @@ import com.aranirahan.myfootballapi.R
 import com.aranirahan.myfootballapi.R.id.*
 import com.aranirahan.myfootballapi.favorite.favoriteMatch.FavoriteMatchFragment
 import com.aranirahan.myfootballapi.favorite.favoriteTeam.FavoriteTeamsFragment
-import com.aranirahan.myfootballapi.match.PastMatchFragment
+import com.aranirahan.myfootballapi.match.MatchFragment
 import com.aranirahan.myfootballapi.team.TeamsFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
                 pastMatch -> {
                     loadPastMatchFragment(savedInstanceState)
                 }
-                nextMatch -> {
+                team -> {
                     loadNextMatchFragment(savedInstanceState)
                 }
                 favorites -> {
@@ -41,8 +41,8 @@ class HomeActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.main_container, PastMatchFragment()
-                            , PastMatchFragment::class.simpleName)
+                    .replace(R.id.main_container, MatchFragment()
+                            , MatchFragment::class.simpleName)
                     .commit()
         }
     }

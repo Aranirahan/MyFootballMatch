@@ -59,14 +59,14 @@ class TeamsFragment : Fragment(), AnkoComponent<Context>, TeamsView {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 leagueName = spinner.selectedItem.toString()
-                presenter.getTeamList(leagueName, getString(R.string.eror_parameter))
+                presenter.getTeamList(leagueName, getString(R.string.empty_parameter))
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
         swipeRefresh.onRefresh {
-            presenter.getTeamList(leagueName, getString(R.string.eror_parameter))
+            presenter.getTeamList(leagueName, getString(R.string.empty_parameter))
         }
     }
 
@@ -96,7 +96,7 @@ class TeamsFragment : Fragment(), AnkoComponent<Context>, TeamsView {
                     imageResource = R.drawable.ic_search_black_24dp
                     backgroundColor = 80000000
                     onClick {
-                        presenter.getTeamList(getString(R.string.eror_parameter), fieldSearch.textValue())
+                        presenter.getTeamList(getString(R.string.empty_parameter), fieldSearch.textValue())
                     }
                 }.lparams(width = dip(0), height = wrapContent, weight = 1f)
 

@@ -8,7 +8,7 @@
         android:icon="@drawable/match"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/nextMatch"
+        android:id="@+id/team"
         android:enabled="true"
         android:title="@string/team_"
         android:icon="@drawable/ball"
