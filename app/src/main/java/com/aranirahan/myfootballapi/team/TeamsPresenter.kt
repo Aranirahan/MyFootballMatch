@@ -12,18 +12,30 @@ class TeamsPresenter(private val view: TeamsView,
                      private val apiRepository: ApiRepository,
                      private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()) {
 
-    fun getTeamList(league: String?) {
+    fun getTeamList(league: String?, leagueSearch: String?) {
         view.showLoading()
-
-        async(context.main){
-            val data = bg {
-                gson.fromJson(apiRepository
-                        .doRequest(TheSportDBApi.getTeams(league)),
-                        TeamResponse::class.java
-                )
+        if (leagueSearch == "eror") {
+            async(context.main) {
+                val data = bg {
+                    gson.fromJson(apiRepository
+                            .doRequest(TheSportDBApi.getTeams(league)),
+                            TeamResponse::class.java
+                    )
+                }
+                view.showTeamList(data.await().teams)
+                view.hideLoading()
             }
-            view.showTeamList(data.await().teams)
-            view.hideLoading()
+        } else if (league == "eror") {
+            async(context.main) {
+                val data = bg {
+                    gson.fromJson(apiRepository
+                            .doRequest(TheSportDBApi.getTeamSearch(leagueSearch)),
+                            TeamResponse::class.java
+                    )
+                }
+                view.showTeamList(data.await().teams)
+                view.hideLoading()
+            }
         }
     }
 }

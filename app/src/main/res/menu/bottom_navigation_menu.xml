@@ -17,14 +17,14 @@
         android:id="@+id/favorites"
         android:enabled="true"
         android:icon="@drawable/favorite_match"
-        android:title="@string/my_match"
+        android:title="@string/favorite_match_"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/favorites_team"
         android:enabled="true"
         android:icon="@drawable/favorite_team"
-        android:title="@string/my_team"
+        android:title="@string/favorite_team_"
         app:showAsAction="ifRoom"/>
 
 </menu>

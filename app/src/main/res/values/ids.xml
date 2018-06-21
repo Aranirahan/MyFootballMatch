@@ -30,4 +30,5 @@
     <item name="tv_away_substitutes" type="id">tv_away_substitutes</item>
     <item name="rv_list_team" type="id">rv_list_team</item>
     <item name="rv_list_team_favorite" type="id">rv_list_team_favorite</item>
+    <item name="et_search" type="id">fieldSearchId</item>
 </resources>

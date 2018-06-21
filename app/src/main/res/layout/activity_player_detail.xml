@@ -2,7 +2,7 @@
 
 <ScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#006064"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -10,7 +10,7 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".detail.detailTeam.player.playerDetail.PlayerDetailActivity">
 
@@ -77,11 +77,12 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_position_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/forward_player"
         android:textSize="18sp"
+        android:textColor="#E0F7FA"
         android:layout_marginBottom="8dp"/>
     <TextView
         android:id="@+id/tv_forward_player_detail"
@@ -90,6 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
+        android:textColor="#E0F7FA"
         android:textSize="18sp" />
 
 </LinearLayout>

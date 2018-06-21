@@ -1,5 +1,6 @@
 package com.aranirahan.myfootballapi.match.pastMatch
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.os.Bundle
@@ -21,11 +22,13 @@ import com.aranirahan.myfootballapi.util.MyKEY
 import com.aranirahan.myfootballapi.util.invisible
 import com.aranirahan.myfootballapi.util.visible
 import com.aranirahan.myfootballapi.R.array.match_spinner
+import com.aranirahan.myfootballapi.R.id.et_search
 import com.aranirahan.myfootballapi.R.string.past_match
 import com.aranirahan.myfootballapi.match.nextMatch.NextMatchPresenter
 import com.google.gson.Gson
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
+import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.support.v4.*
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
 
@@ -34,6 +37,9 @@ class PastMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
     private lateinit var listTeam: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var swipeRefresh: SwipeRefreshLayout
+
+    private lateinit var fieldSearch: EditText
+    private lateinit var searchButton: ImageButton
 
     private lateinit var spinner: Spinner
 
@@ -44,6 +50,8 @@ class PastMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        fieldSearch = view!!.findViewById(et_search)
 
         adapter = TeamsAdapter(matchEvent) {
             startActivity<DetailActivity>(
@@ -64,22 +72,23 @@ class PastMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
+            @SuppressLint("StringFormatInvalid")
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (spinner.selectedItem == getString(past_match)) {
-                    pastMatchPresenter.getMatchList(getString(R.string.match_id))
+                    pastMatchPresenter.getMatchList(getString(R.string.match_id), getString(R.string.eror_parameter))
 
                     swipeRefresh.onRefresh {
-                        pastMatchPresenter.getMatchList(getString(R.string.match_id))
+                        pastMatchPresenter.getMatchList(getString(R.string.match_id), getString(R.string.eror_parameter))
                     }
                 } else {
                     nextMatchPresenter.getMatchList(getString(R.string.match_id))
 
                     swipeRefresh.onRefresh {
                         nextMatchPresenter.getMatchList(getString(R.string.match_id))
+
                     }
                 }
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
@@ -97,6 +106,26 @@ class PastMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
             topPadding = dip(16)
             leftPadding = dip(16)
             rightPadding = dip(16)
+
+            linearLayout {
+                lparams(width = matchParent, height = wrapContent)
+                orientation = LinearLayout.HORIZONTAL
+
+                fieldSearch = editText {
+                    singleLine = true
+                    id = et_search
+                    hint = "Search Match"
+                }.lparams(width = dip(0), height = wrapContent, weight = 5f)
+
+                searchButton = imageButton{
+                    imageResource = R.drawable.ic_search_black_24dp
+                    backgroundColor = 80000000
+                    onClick {
+                        pastMatchPresenter.getMatchList(getString(R.string.eror_parameter), fieldSearch.textValue())
+                    }
+                }.lparams(width = dip(0), height = wrapContent, weight = 1f)
+
+            }
 
             spinner = spinner()
 
@@ -140,5 +169,7 @@ class PastMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
             adapter.notifyDataSetChanged()
         } ?: toast(getString(R.string.empty_data))
     }
+
+    fun EditText.textValue() = text.toString()
 }
 

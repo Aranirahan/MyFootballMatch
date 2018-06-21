@@ -53,6 +53,9 @@ class DetailActivity : AppCompatActivity(), DetailView, MatchView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        supportActionBar?.title = "Match Detail"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         txtMatchDate = findViewById(R.id.match_date)
         progressBar = findViewById(R.id.progress_bar_detail)
 

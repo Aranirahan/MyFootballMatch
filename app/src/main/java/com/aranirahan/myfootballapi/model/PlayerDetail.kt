@@ -18,6 +18,9 @@ data class PlayerDetail(
         @SerializedName("strFanart1")
         var strFanart1: String? = null,
 
+        @SerializedName("strPosition")
+        var strPosition: String? = null,
+
         @SerializedName("strDescriptionEN")
         var strDescriptionEN: String? = null
 )

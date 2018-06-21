@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Football Match Schedule</string>
+    <string name="app_name">Football Pocket</string>
     <string name="empty_data">Empty Data</string>
     <string name="match_id">4328</string>
     <string name="vs">vs</string>
@@ -51,4 +51,7 @@
     <string name="height_">Height</string>
     <string name="forward_player">Forward</string>
     <string name="search">Search</string>
+    <string name="eror_parameter">eror</string>
+    <string name="favorite_match_">Favorite Match</string>
+    <string name="favorite_team_">Favorite Team</string>
 </resources>

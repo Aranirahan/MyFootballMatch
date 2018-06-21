@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".detail.detailMatch.DetailActivity" />
         <activity android:name=".detail.detailTeam.detailActivity.TeamDetailActivity" />
-        <activity android:name=".detail.detailTeam.TeamDetailActivity2" />
+        <!--<activity android:name=".detail.detailTeam.TeamDetailActivity2" />-->
         <!-- <activity android:name=".view.myActivity.PastMatchActivity" /> -->
         <!-- <activity android:name=".view.myActivity.NextMatchActivity" /> -->
         <!-- <activity android:name=".view.myActivity.MainActivity" /> -->

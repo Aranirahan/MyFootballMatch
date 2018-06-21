@@ -2,13 +2,10 @@ package com.aranirahan.myfootballapi.detail.detailTeam.player.playerDetail
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.util.Log
 import android.widget.ProgressBar
 import com.aranirahan.myfootballapi.R
 import com.aranirahan.myfootballapi.api.ApiRepository
 import com.aranirahan.myfootballapi.model.PlayerDetail
-import com.aranirahan.myfootballapi.model.PlayerTeam
 import com.aranirahan.myfootballapi.util.invisible
 import com.aranirahan.myfootballapi.util.visible
 import com.google.gson.Gson
@@ -24,6 +21,9 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_detail)
+
+        supportActionBar?.title = "Player Detail"
+
         progressBar = findViewById(R.id.progress_bar_player)
 
         val myIntent = intent
@@ -49,6 +49,7 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView {
         Picasso.get().load(data.get(0).strFanart1).into(iv_player_detail)
         tv_weight.text = data.get(0).strWeight
         tv_height.text = data.get(0).strHeight
+        tv_position_player.text = data.get(0).strPosition
         tv_forward_player_detail.text = data.get(0).strDescriptionEN
     }
 }
