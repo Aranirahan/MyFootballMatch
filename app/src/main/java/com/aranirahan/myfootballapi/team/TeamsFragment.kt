@@ -56,6 +56,7 @@ class TeamsFragment : Fragment(), AnkoComponent<Context>, TeamsView {
         val request = ApiRepository()
         val gson = Gson()
         presenter = TeamsPresenter(this, request, gson)
+
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 leagueName = spinner.selectedItem.toString()

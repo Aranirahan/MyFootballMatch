@@ -43,7 +43,7 @@ class TeamDetailPresenterTest {
         val id = "1234"
 
         Mockito.`when`(gson.fromJson(apiRepository
-                .doRequest(TheSportDBApi.getTeamDetail(id)),
+                .doRequest(TheSportDBApi.getDetailTeam(id)),
                 TeamResponse::class.java
         )).thenReturn(response)
 

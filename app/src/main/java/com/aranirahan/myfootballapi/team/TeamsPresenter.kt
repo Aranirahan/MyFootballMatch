@@ -14,7 +14,7 @@ class TeamsPresenter(private val view: TeamsView,
 
     fun getTeamList(league: String?, leagueSearch: String?) {
         view.showLoading()
-        if (leagueSearch == "eror") {
+        if (leagueSearch == "empty_parameter") {
             async(context.main) {
                 val data = bg {
                     gson.fromJson(apiRepository
@@ -25,7 +25,8 @@ class TeamsPresenter(private val view: TeamsView,
                 view.showTeamList(data.await().teams)
                 view.hideLoading()
             }
-        } else if (league == "eror") {
+
+        } else if (league == "empty_parameter") {
             async(context.main) {
                 val data = bg {
                     gson.fromJson(apiRepository
