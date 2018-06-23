@@ -9,7 +9,7 @@ Features : <br>
 -Favorite team<br>
 Use api [thesportsDB.com](thesportsDB.com)<br>
 **Penampakan**
-![screenshot_2018-06-23-07-59-27-207_com aranirahan myfootballapi](https://user-images.githubusercontent.com/32474003/41804383-0478310e-76c0-11e8-8b9e-3b6d67b4ceb8.png)
+![screenshot_2018-06-23-07-59-27-207_com aranirahan myfootballapi](https://user-images.githubusercontent.com/32474003/41804383-0478310e-76c0-11e8-8b9e-3b6d67b4ceb8.png){:height="700px" width="400px"}
 ![screenshot_2018-06-23-07-59-49-401_com aranirahan myfootballapi](https://user-images.githubusercontent.com/32474003/41804384-04c57176-76c0-11e8-99be-606dcacf5f31.png)
 ![screenshot_2018-06-23-07-59-55-981_com aranirahan myfootballapi](https://user-images.githubusercontent.com/32474003/41804385-051a6dca-76c0-11e8-8289-446e8666ef74.png)
 ![screenshot_2018-06-23-07-59-59-543_com aranirahan myfootballapi](https://user-images.githubusercontent.com/32474003/41804386-056cdda8-76c0-11e8-8fdf-17e6e1d35b1e.png)
