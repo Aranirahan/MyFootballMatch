@@ -1,5 +1,5 @@
 # MyFootballMatch
-Features : <br>
+**Features :**<br>
 -Match schedule in past or next match, can choose lague <br>
 -Team list, can choose league<br>
 -Team description<br>
@@ -7,8 +7,8 @@ Features : <br>
 -Player detail<br>
 -Favorite match<br>
 -Favorite team<br>
-Use api [thesportsDB.com](thesportsDB.com)<br>
-**Penampakan**<br>
+Use api [thesportsDB.com](thesportsDB.com)<br><br><br>
+**Penampakan**<br><br>
 <img width="300" alt="ss1" src="https://user-images.githubusercontent.com/32474003/41804383-0478310e-76c0-11e8-8b9e-3b6d67b4ceb8.png">
 <img width="300" alt="ss1" src="https://user-images.githubusercontent.com/32474003/41804385-051a6dca-76c0-11e8-8289-446e8666ef74.png">
 <img width="300" alt="ss1" src="https://user-images.githubusercontent.com/32474003/41804386-056cdda8-76c0-11e8-8fdf-17e6e1d35b1e.png">
