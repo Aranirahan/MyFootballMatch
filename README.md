@@ -8,6 +8,13 @@
 - Favorite match<br>
 - Favorite team<br><br>
 
+**Learning Materials :**<br>
+- Kotlin for android<br>
+- Kotlin extension<br>
+- Fetch API<br>
+- AnkoSQlite database<br>
+- All lessons on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
+
 Use api [thesportsDB.com](thesportsDB.com)<br><br>
 
 **Penampakan :**<br><br>
