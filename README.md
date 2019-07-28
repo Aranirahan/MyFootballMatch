@@ -6,6 +6,8 @@
 - Kotlin extension<br>
 - Fetch API<br>
 - Anko SQlite database<br>
+- Unit testing<br>
+- Instrument testing<br>
 - Etc. Let's see all lesson on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
 
 **Features :**<br>
