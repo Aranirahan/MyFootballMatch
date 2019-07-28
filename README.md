@@ -1,4 +1,12 @@
 # MyFootballMatch
+
+**Learning Materials :**<br>
+- Kotlin for android<br>
+- Kotlin extension<br>
+- Fetch API<br>
+- Anko SQlite database<br>
+- All lessons on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
+
 **Features :**<br>
 - Match schedule in past or next match, can choose league <br>
 - Team list, can choose league<br>
@@ -7,13 +15,6 @@
 - Player detail<br>
 - Favorite match<br>
 - Favorite team<br><br>
-
-**Learning Materials :**<br>
-- Kotlin for android<br>
-- Kotlin extension<br>
-- Fetch API<br>
-- Anko SQlite database<br>
-- All lessons on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
 
 Use api [thesportsDB.com](thesportsDB.com)<br><br>
 
