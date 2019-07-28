@@ -12,7 +12,7 @@
 - Kotlin for android<br>
 - Kotlin extension<br>
 - Fetch API<br>
-- AnkoSQlite database<br>
+- Anko SQlite database<br>
 - All lessons on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
 
 Use api [thesportsDB.com](thesportsDB.com)<br><br>
