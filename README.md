@@ -1,11 +1,12 @@
 # MyFootballMatch
 
-**Learning Materials :**<br>
+**Lesson Materials :**<br>
+- MVP pattern<br>
 - Kotlin for android<br>
 - Kotlin extension<br>
 - Fetch API<br>
 - Anko SQlite database<br>
-- All lessons on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
+- Etc. Let's see all lesson on [Dicoding Academy - KADE Class](https://www.dicoding.com/academies/55/tutorials)<br><br>
 
 **Features :**<br>
 - Match schedule in past or next match, can choose league <br>
